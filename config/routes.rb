@@ -3,7 +3,20 @@ Sokura::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root :to => 'home#index'
+   
+   resources :articles
+   resources :events
+   
+   #static pages
+   get '/ueber_sokura' => 'pages#about'
+   get '/foerderverein' => 'pages#booster'
+   get '/kontakt' => 'pages#contact'
+   get '/spendenaufruf' => 'pages#donation'
+   get '/anfahrt' => 'pages#location'
+   
+   
+   
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

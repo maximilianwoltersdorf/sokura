@@ -1,0 +1,6 @@
+.article
+  .date
+    %span= l(article.created_at.to_date).html_safe
+  .title= article.title
+  .description= article.text
+  .read_more=link_to "Ganzen Beitrag anzeigen", [article]

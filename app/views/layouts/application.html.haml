@@ -1,0 +1,46 @@
+!!! 5
+
+%head
+  %meta{ :charset => "utf-8" }
+  %title Sokura
+  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+  = csrf_meta_tags
+
+%body
+  #wrapper
+    %header
+      #logo-box=link_to image_tag("Logo_colored.png"), root_path
+      #top-info-box
+        %ul
+          %li.drive=link_to "Anfahrt", anfahrt_path
+          %li.mail=mail_to "info@sakuro.de", "Mail: info@sakura.de"
+          %li.tel Tel: xxx / YY 33 44 55
+      .placeholder
+      #pitch
+        %h1 Willkommen im <span style="color:#C30075">So</span>zial<span style="color:#C30075">Ku</span>ltur<span style="color:#C30075">Ra</span>um <br/> auf dem Kulturhof "Vier Seiten"
+        #hof-overview=image_tag("Luftbildlogo.gif")
+      .placeholder
+      #menu-bar
+        %ul
+          %li=link_to 'Startseite', root_path, :class => current_page?(root_path) ? "active" : ""
+          %li=link_to 'Über SoKuRa', ueber_sokura_path, :class => current_page?(ueber_sokura_path) ? "active" : ""
+          %li=link_to 'Der Förderverein', foerderverein_path, :class => current_page?(foerderverein_path) ? "active" : ""
+          %li=link_to 'Kontakt', kontakt_path, :class => current_page?(kontakt_path) ? "active" : ""
+          %li=link_to 'Spendenaufruf', spendenaufruf_path, :class => current_page?(spendenaufruf_path) ? "active" : ""
+          
+    #content
+      #main= yield
+      #events
+        %h2 Veranstaltungen
+        %hr
+        =render @events
+      #gallery
+        %h2 Gallerie
+        %hr
+        Die ersten Bilder kommen bald
+
+    #footer
+      test
+
+

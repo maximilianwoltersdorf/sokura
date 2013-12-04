@@ -1,0 +1,127 @@
+header {
+  
+  #logo-box{
+    float:left;
+    background-color: #fff;
+    width: 160px;
+    height: 160px;
+    text-align: center;
+    padding: 20px;
+    opacity:0.9;
+  }
+  
+  #top-info-box{
+    float:right;
+    background-color: #363636;
+    opacity: 0.9;
+    ul{
+      list-style-type:none;
+      padding: 10px;
+      li{
+        opacity: 0.7;
+        float:left;
+        color: #fff;
+        margin-right: 35px;
+        margin-bottom:15px;
+        a{
+          text-decoration:none;
+          color: #fff;
+        }
+        &.drive a{
+          color: #009242;
+          font-weight:bold;
+        }
+        &.drive:hover, &.mail:hover{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  
+  .placeholder{
+    clear:both;
+    height: 10px;
+    width: 100%;
+  }
+  
+  #pitch{
+    min-height: 120px;
+    position: relative;
+    clear:both;
+    background-color: #009242;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 10px;
+    -moz-box-shadow: 5px 5px 5px #363636;
+    -webkit-box-shadow: 5px 5px 5px #363636;
+    box-shadow: 5px 5px 5px #363636;
+    h1{
+      margin: 0;
+      padding: 20px;
+      float:left;
+      width: 635px;
+    }
+    #hof-overview {
+
+      img{
+        float: right;
+        height: 180px;
+        position: absolute;
+        right: 0;
+        top: -50%;
+        -moz-box-shadow: 5px 5px 5px #363636;
+        -webkit-box-shadow: 5px 5px 5px #363636;
+        box-shadow: 5px 5px 5px #363636;
+      }
+    }
+  }
+  
+  #menu-bar{
+    clear:both;
+    width: 100%;
+    background-image: url("paper_bg.jpg");
+    -moz-box-shadow: 5px 5px 5px #363636;
+    -webkit-box-shadow: 5px 5px 5px #363636;
+    box-shadow: 5px 5px 5px #363636;
+    height: 50px;
+    ul{
+      list-style-type:none;
+      width: 960px;
+      height:50px;
+      li{
+        float:left;
+        border-right: 1px solid #363636;
+        width: 150px;
+        height: 50px;
+        text-align:center;
+        a{
+          text-decoration:none;
+          color: #363636;
+          font-size: 20px;
+          display: block;
+          height: 50px;
+          padding-top: 11px;
+        
+          &:hover, &.active{
+           background-color: #009242;
+           color: white; 
+           height:39px;
+          }
+        }
+      }
+      li:last-child{
+        border:none;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+

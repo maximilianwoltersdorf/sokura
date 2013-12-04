@@ -11,3 +11,105 @@
  *= require_self
  *= require_tree .
  */
+
+
+html{
+ margin:0;
+ padding:0;
+ font-family: "SourceSansPro";
+ color: #333;
+ background-image: url("backstein_bg.jpg");
+ background-adjustment;
+ height:100%;
+}
+
+body{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+#wrapper{
+  width:1024px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  position: relative;
+}
+
+#content{
+  margin-top:10px;
+  position:relative;
+  padding-bottom: 120px;
+  overflow:hidden;
+}
+
+h1{
+  font-size: 24px;
+  color: white;
+  padding: 20px;
+}
+
+h2{
+  font-size: 24px;
+  color:white;
+  margin:0;
+  padding:0;
+  font-weight: normal;
+}
+
+.green{
+  background-color: #009242;
+  padding: 3px;
+}
+
+span{
+  &.purple{
+    color:#C30075;
+  }
+}
+
+hr{
+  padding:0;
+  margin:0;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+#main {
+  width: 65%;
+  min-height: 200px;
+  background-image: url("paper_bg.jpg");
+  -moz-box-shadow: 5px 5px 5px #363636;
+  -webkit-box-shadow: 5px 5px 5px #363636;
+  box-shadow: 5px 5px 5px #363636;
+  padding: 10px;
+  float:left;
+  padding-bottom: 30px;
+}
+
+#events, #gallery{
+  width: 30%;
+  min-height: 100px;
+  background-image: url("paper_bg.jpg");
+  -moz-box-shadow: 5px 5px 5px #363636;
+  -webkit-box-shadow: 5px 5px 5px #363636;
+  box-shadow: 5px 5px 5px #363636;
+  padding: 10px;
+  float:right;
+}
+
+#gallery{
+  margin-top: 10px;
+}
+
+.clearfix{
+  clear:both;
+}
+
+
+
+
