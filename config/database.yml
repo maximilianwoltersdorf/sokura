@@ -1,17 +1,6 @@
 development:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   database: sokura_development
   pool: 5
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
- 
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: sokura_test
-  pool: 5
-  username: root
-  password: 
-  socket: /tmp/mysql.sock
+  password:
