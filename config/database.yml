@@ -1,6 +1,4 @@
 development:
   adapter: postgresql
-  encoding: unicode
-  database: sokura_development
-  pool: 5
-  password:
+  database: sokura_dev
+  host: localhost
