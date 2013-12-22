@@ -4,13 +4,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use postgress as the database for Active Record
-group :development do
-  gem 'mysql2'
-end
+gem 'mysql2'
 
-group :production do
-  gem 'pg'
-end
+# Hosting
+gem 'net-ssh'
+gem 'net-sftp'
+gem 'highline'
+gem 'railshoster'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'

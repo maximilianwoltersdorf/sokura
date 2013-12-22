@@ -1,0 +1,38 @@
+#footer {
+  background-image: url("paper_bg.jpg");
+  -moz-box-shadow: 5px 5px 5px #363636;
+  -webkit-box-shadow: 5px 5px 5px #363636;
+  box-shadow: 5px 5px 5px #363636;
+  width: 1024px;
+  height: 100px;
+  position: absolute;
+  bottom:0;
+  clear:both;
+  #menu {
+    height: 70%;
+    ul{
+      li{
+        text-align:center;
+        list-style-type:none;
+        width: 33%;
+        float:left;
+        font-size:18px;
+        padding-top: 20px;
+        a{
+          text-decoration:none;
+          color:#363636;
+        }
+        a:hover{
+         text-decoration:underline; 
+        }
+      }
+    }
+  }
+}
+
+
+
+#created {
+  height:30%;
+  text-align:center;
+}

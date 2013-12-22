@@ -14,7 +14,7 @@ Sokura::Application.routes.draw do
    get '/kontakt' => 'pages#contact'
    get '/spendenaufruf' => 'pages#donation'
    get '/anfahrt' => 'pages#location'
-   
+   get '/imprint' => 'pages#imprint'
    
    
 
