@@ -12,7 +12,7 @@ gem 'highline'
 gem 'railshoster'
 gem "capistrano-rails"
 gem "capistrano", '2.11.2'
-gem "rake", "10.1.1"
+gem "rake"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
