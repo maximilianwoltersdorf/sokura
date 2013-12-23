@@ -5,3 +5,12 @@ development:
   username: root
   password: 
   host: localhost
+  
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: db_24832210n2
+  username: user24832210n2
+  password: EE8Cus87
+  host:     rho.railshoster.de

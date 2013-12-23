@@ -54,7 +54,7 @@ end
 set :user, "user24832210"
 
 # password to login to the target server
-set :password, "ohchiuqu"
+set :password, "PhawgHwt1L"
 
 # allow SSH-Key-Forwarding
 set :ssh_options, { :forward_agent => true }
