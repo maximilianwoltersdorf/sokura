@@ -37,9 +37,8 @@ def rails_version_supports_assets?
   return rails_v != nil && rails_v[0] >= 3 && rails_v[1] >= 1
 end
 
-if rails_version_supports_assets?
-  require 'bundler/capistrano'
-end
+require 'bundler/capistrano'
+
 
 #### Use the asset-pipeline
 
@@ -89,7 +88,6 @@ role :app, "rho.railshoster.de"
 role :web, "rho.railshoster.de"
 role :db,  "rho.railshoster.de", :primary => true
 
-set :bundle_cmd, "/home/#{user}/.gems/bin/bundle"
 
 
 ############################################
@@ -113,5 +111,5 @@ if rails_version_supports_assets?
   before "deploy:assets:precompile", "deploy:additional_symlink"
   after "deploy:create_symlink", "deploy:migrate"
 else
-  after "deploy:create_symlink", "deploy:additional_symlink", "deploy:migrate"
+  after "deploy:assets:precompile", "deploy:create_symlink", "deploy:additional_symlink", "deploy:migrate"
 end
