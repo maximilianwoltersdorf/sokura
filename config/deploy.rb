@@ -15,17 +15,29 @@ def gemfile_lock_exists?
 end
 
 def rails_version
-  stdout = `bundle list rails`
-  matches = stdout.scan(/\/rails-(\d+\.\d+\.\d+)$/).first
-  matches ? matches.first : nil
+  if gemfile_exists? 
+    rails_v = (Proc.new {
+      file = File.new("Gemfile", "r")
+	  while (line = file.gets)
+        if line =~ /^\s*gem\s+[\"\']rails[\"\'].+/
+          version = line.scan(/(\d+)\.(\d+)\.(\d+)/).first.map {|x| x.to_i}
+        end
+      end
+      file.close
+      version
+    }).call
+  else 
+    rails_v = nil
+  end
+  return rails_v
 end
 
 def rails_version_supports_assets?
-  rv = rails_version
-  rv ? rv >= "3.1.0" : false
+  rails_v = rails_version
+  return rails_v != nil && rails_v[0] >= 3 && rails_v[1] >= 1
 end
 
-if gemfile_exists? && gemfile_lock_exists?
+if rails_version_supports_assets?
   require 'bundler/capistrano'
 end
 
@@ -41,10 +53,11 @@ end
 # user to login to the target server
 set :user, "user24832210"
 
-
 # password to login to the target server
-set :password, "PhawgHwt1L"
+set :password, "ohchiuqu"
 
+# allow SSH-Key-Forwarding
+set :ssh_options, { :forward_agent => true }
 
 ## Application name and repository
 
@@ -52,7 +65,7 @@ set :password, "PhawgHwt1L"
 set :application, "rails1"
 
 # repository location
-set :repository, ""
+set :repository, "git@github.com:maxmilianwoltersdorf/sokura.git"
 
 # :subversionn or :git
 set :scm, :git
@@ -68,22 +81,19 @@ default_run_options[:pty] = true
 set :use_sudo, false
 
 # set the location where to deploy the new project
-
-set :deploy_to, "/home/user24832210/rails1"
+set :deploy_to, "/home/#{user}/#{application}"
 
 # live
-  role :app, "rho.railshoster.de"
-  role :web, "rho.railshoster.de"
-
+role :app, "rho.railshoster.de"
+role :web, "rho.railshoster.de"
 role :db,  "rho.railshoster.de", :primary => true
 
-# railshoster bundler settings
-set :bundle_flags, "--deployment --binstubs"
 
 ############################################
 # Default Tasks by RailsHoster.de
 ############################################
 namespace :deploy do
+
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
@@ -91,17 +101,9 @@ namespace :deploy do
 
   desc "Additional Symlinks ( database.yml, etc. )"
   task :additional_symlink, :roles => :app do
-    run "ln -sf #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -fs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
-end
 
-namespace :railshoster do
-  desc "Show the url of your app."
-  task :appurl do
-    puts "\nThe default RailsHoster.com URL of your app is:"
-    puts "\nhttp://user24832210-1.rho.railshoster.de"    
-    puts "\n"
-  end
 end
 
 if rails_version_supports_assets?
@@ -110,4 +112,3 @@ if rails_version_supports_assets?
 else
   after "deploy:create_symlink", "deploy:additional_symlink", "deploy:migrate"
 end
-
