@@ -67,6 +67,7 @@ set :application, "rails1"
 # repository location
 set :repository, "git@github.com:maxmilianwoltersdorf/sokura.git"
 
+
 # :subversionn or :git
 set :scm, :git
 set :scm_verbose, true
