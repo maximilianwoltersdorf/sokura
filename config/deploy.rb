@@ -89,6 +89,8 @@ role :app, "rho.railshoster.de"
 role :web, "rho.railshoster.de"
 role :db,  "rho.railshoster.de", :primary => true
 
+set :bundle_cmd, "/home/#{user}/.gems/bin/bundle"
+
 
 ############################################
 # Default Tasks by RailsHoster.de
