@@ -111,5 +111,5 @@ if rails_version_supports_assets?
   before "deploy:assets:precompile", "deploy:additional_symlink"
   after "deploy:create_symlink", "deploy:migrate"
 else
-  after "deploy:assets:precompile", "deploy:create_symlink", "deploy:additional_symlink", "deploy:migrate"
+  after "deploy:create_symlink", "deploy:additional_symlink", "deploy:migrate"
 end
