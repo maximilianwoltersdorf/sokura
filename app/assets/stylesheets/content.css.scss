@@ -18,7 +18,7 @@ ul{
       background-position: 0 4px;
       background-repeat: no-repeat;
       padding-left: 20px;
-      background-image: url('list-image-arrow-blue.png');
+      background-image: image-url('list-image-arrow-blue.png');
     }
   }
   &.arrows{
@@ -29,7 +29,7 @@ ul{
       background-position: 0 4px;
       background-repeat: no-repeat;
       padding-left: 25px;
-      background-image: url('list-image-arrow-blue.png');
+      background-image: image-url('list-image-arrow-blue.png');
     } 
   }
 }
