@@ -46,7 +46,7 @@ ol{
 }
 
 #theater{
-  background-image: url('theater.png');
+  background-image: image-url('theater.png');
   background-repeat: no-repeat;
   width: 200px;
   height: 200px;
@@ -55,7 +55,7 @@ ol{
 }
 
 #learning{
-  background-image: url('learning.png');
+  background-image: image-url('learning.png');
   background-repeat: no-repeat;
   width: 200px;
   height: 200px;
@@ -74,7 +74,7 @@ h3{
 #luftbildlogo{
   width: 200px;
   height: 180px;
-  background-image: url('luftbildlogo_small.png');
+  background-image: image-url('luftbildlogo_small.png');
   float:right;
   margin-right: 70px;
   margin-top: -20px;
