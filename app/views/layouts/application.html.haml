@@ -18,16 +18,16 @@
           %li.tel Tel: xxx / YY 33 44 55
       .placeholder
       #pitch
-        %h1 Willkommen im <span style="color:#C30075">So</span>zial<span style="color:#C30075">Ku</span>ltur<span style="color:#C30075">Ra</span>um <br/> auf dem Kulturhof "Vier Seiten"
+        %h1 Willkommen im <span style="color:#C30075">So</span>zial<span style="color:#C30075">Ku</span>ltur<span style="color:#C30075">Ra</span>um auf dem Liederhof
         #hof-overview=image_tag("Luftbildlogo.gif")
       .placeholder
       #menu-bar
         %ul
           %li=link_to 'Startseite', root_path, :class => current_page?(root_path) ? "active" : ""
-          %li=link_to 'Über SoKuRa', ueber_sokura_path, :class => current_page?(ueber_sokura_path) ? "active" : ""
+          %li=link_to 'Der Liederhof', der_liederhof_path, :class => current_page?(der_liederhof_path) ? "active" : ""
           %li=link_to 'Der Förderverein', foerderverein_path, :class => current_page?(foerderverein_path) ? "active" : ""
+          %li=link_to 'Ihre Hilfe', ihre_hilfe_path, :class => current_page?(ihre_hilfe_path) ? "active" : ""
           %li=link_to 'Kontakt', kontakt_path, :class => current_page?(kontakt_path) ? "active" : ""
-          %li=link_to 'Spendenaufruf', spendenaufruf_path, :class => current_page?(spendenaufruf_path) ? "active" : ""
           
     #content
       #main= yield
@@ -45,7 +45,7 @@
         %ul
           %li= link_to 'Impressum', imprint_path
           %li= link_to 'Kontakt', kontakt_path
-          %li= link_to 'Über Sokura', ueber_sokura_path
+          %li= link_to 'Über Sokura', der_liederhof_path
       #created
         %hr
         created by Maximilian Woltersdorf

@@ -9,10 +9,10 @@ Sokura::Application.routes.draw do
    resources :events
    
    #static pages
-   get '/ueber_sokura' => 'pages#about'
+   get '/der_liederhof' => 'pages#about'
    get '/foerderverein' => 'pages#booster'
    get '/kontakt' => 'pages#contact'
-   get '/spendenaufruf' => 'pages#donation'
+   get '/ihre_hilfe' => 'pages#donation'
    get '/anfahrt' => 'pages#location'
    get '/imprint' => 'pages#imprint'
    
